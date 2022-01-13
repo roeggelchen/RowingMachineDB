@@ -5,6 +5,6 @@
     "\\polls\\migrations",
     "\\RowingMachineDB"
   ],
-  "SelectedNode": "\\RowingMachineDB\\settings.py",
+  "SelectedNode": "\\polls\\models.py",
   "PreviewInSolutionExplorer": false
 }
