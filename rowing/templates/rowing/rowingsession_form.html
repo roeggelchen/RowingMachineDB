@@ -1,0 +1,50 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'rowing_session_list' %}">
+    Session Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.errors}}
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="com_port">COM Port: </label>
+        <input class="form-control col-sm-10" id="com_port" type="text" name="com_port" value="{{ object.com_port }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="c">C: </label>
+        <input class="form-control col-sm-10" id="c" type="text" name="c" value="{{ object.c }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="t">T: </label>
+        <input class="form-control col-sm-10" id="t" type="text" name="t" value="{{ object.t }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="version">Version: </label>
+        <input class="form-control col-sm-10" id="version" type="text" name="version" value="{{ object.version }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="max_level">Max Level: </label>
+        <input class="form-control col-sm-10" id="max_level" type="number" name="max_level" value="{{ object.max_level }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="h">H: </label>
+        <input class="form-control col-sm-10" id="h" type="text" name="h" value="{{ object.h }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="start_time">Start Time: </label>
+        <input class="form-control col-sm-10" id="start_time" type="datetime-local" name="start_time" value="{{ object.start_time }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="end_time">End Time: </label>
+        <input class="form-control col-sm-10" id="end_time" type="datetime-local" name="end_time" value="{{ object.end_time }}">
+    </div>
+    <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

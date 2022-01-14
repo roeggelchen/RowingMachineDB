@@ -9,7 +9,8 @@ class RowingSessionViewSet(viewsets.ModelViewSet):
 
     queryset = models.RowingSession.objects.all()
     serializer_class = serializers.RowingSessionSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
 
 class RowingStrokeViewSet(viewsets.ModelViewSet):
@@ -17,4 +18,5 @@ class RowingStrokeViewSet(viewsets.ModelViewSet):
 
     queryset = models.RowingStroke.objects.all()
     serializer_class = serializers.RowingStrokeSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]

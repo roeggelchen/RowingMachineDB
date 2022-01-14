@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="m-2"><h4>games</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'games_player_list' %}">player Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'games_match_list' %}">match Listing</a></div>
+{% endblock %}

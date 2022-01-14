@@ -3,21 +3,21 @@ from rest_framework import serializers
 from . import models
 
 
-class QuestionSerializer(serializers.ModelSerializer):
+#class QuestionSerializer(serializers.ModelSerializer):
 
-    class Meta:
-        model = models.Question
-        fields = [
-            "question_text",
-            "pub_date"
-        ]
+#    class Meta:
+#        model = models.Question
+#        fields = [
+#            "question_text",
+#            "pub_date"
+#        ]
         
 class RowingSessionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.RowingSession
         fields = [
-            "comport",
+            "com_port",
             "c",
             "t",
             "version",
