@@ -23,8 +23,8 @@ class RowingSession(models.Model):
     version = models.CharField(max_length=50)
     max_level = models.IntegerField(default=0)
     h = models.CharField(max_length=5)
-    start_time = models.DateTimeField('start_time', auto_now_add=True)
-    end_time = models.DateTimeField('end_time', auto_now_add=True)
+    start_time = models.DateTimeField('start_time')#, auto_now_add=True)
+    end_time = models.DateTimeField('end_time')#, auto_now_add=True)
     
     def __str__(self):
         return self.start_time
@@ -58,7 +58,7 @@ class RowingStroke(models.Model):
     zero = models.IntegerField(default=0)
     level = models.IntegerField(default=0)
     message = models.CharField(max_length=200)
-    time_stamp = models.DateTimeField('time_stamp', auto_now_add=True)
+    time_stamp = models.DateTimeField('time_stamp')#, auto_now_add=True)
     
     # def __str__(self):
     #     return self.time_stamp

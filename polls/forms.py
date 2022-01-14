@@ -6,7 +6,7 @@ class RowingSessionForm(forms.ModelForm):
     class Meta:
         model = models.RowingSession
         fields = [
-            "comport",
+            "com_port",
             "c",
             "t",
             "version",

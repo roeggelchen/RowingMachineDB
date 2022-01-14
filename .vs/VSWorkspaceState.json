@@ -2,7 +2,6 @@
   "ExpandedNodes": [
     "",
     "\\polls",
-    "\\polls\\migrations",
     "\\RowingMachineDB"
   ],
   "SelectedNode": "\\polls\\models.py",

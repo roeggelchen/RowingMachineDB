@@ -12,26 +12,26 @@ def index(request):
 
 class RowingSessionListView(generic.ListView):
     model = models.RowingSession
-    form_class = forms.RowingSession
+    form_class = forms.RowingSessionForm
 
 
 class RowingSessionCreateView(generic.CreateView):
     model = models.RowingSession
-    form_class = forms.RowingSession
+    form_class = forms.RowingSessionForm
 
 
 class RowingSessionDetailView(generic.DetailView):
     model = models.RowingSession
-    form_class = forms.playerForm
+    form_class = forms.RowingSessionForm
 
 
 class RowingSessionUpdateView(generic.UpdateView):
     model = models.RowingSession
-    form_class = forms.playerForm
+    form_class = forms.RowingSessionForm
     pk_url_kwarg = "pk"
 
 
-class RowingSessioneDleteView(generic.DeleteView):
+class RowingSessioneDeleteView(generic.DeleteView):
     model = models.RowingSession
     success_url = reverse_lazy("rowing_session_list")
 
@@ -57,6 +57,6 @@ class RowingStrokeUpdateView(generic.UpdateView):
     pk_url_kwarg = "pk"
 
 
-class matchDeleteView(generic.DeleteView):
+class RowingStrokeDeleteView(generic.DeleteView):
     model = models.RowingStroke
     success_url = reverse_lazy("rowing_stroke_list")
