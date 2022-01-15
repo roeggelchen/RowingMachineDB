@@ -22,7 +22,7 @@ class RowingSession(models.Model):
     t = models.CharField(max_length=5)
     version = models.CharField(max_length=50)
     max_level = models.IntegerField(default=0)
-    h = models.CharField(max_length=5)
+    h = models.IntegerField(default=0)
     start_time = models.DateTimeField('start_time')#, auto_now_add=True)
     end_time = models.DateTimeField('end_time')#, auto_now_add=True)
     
@@ -48,8 +48,8 @@ class RowingSession(models.Model):
 class RowingStroke(models.Model):
     id = models.BigAutoField(primary_key=True)
     rowing_session = models.ForeignKey(RowingSession, on_delete=models.CASCADE)
-    t = models.CharField(max_length=5)
-    distance = models.FloatField(default=0)
+    t = models.IntegerField()
+    distance = models.IntegerField(default=0)
     one = models.IntegerField(default=1)
     speed = models.TimeField()
     strokes_per_minute = models.IntegerField(default=0)
@@ -67,7 +67,7 @@ class RowingStroke(models.Model):
         pass
 
     def __str__(self):
-        return str(self.start_time)
+        return str(self.time_stamp)
 
     def get_absolute_url(self):
         return reverse("rowing_stroke_detail", args=(self.pk,))

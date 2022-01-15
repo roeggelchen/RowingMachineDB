@@ -13,10 +13,10 @@ from . import models
 #        ]
         
 class RowingSessionSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = models.RowingSession
         fields = [
+            "id",
             "com_port",
             "c",
             "t",
@@ -32,6 +32,7 @@ class RowingStrokeSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.RowingStroke
         fields = [
+            "id",
             "rowing_session",
             "t",
             "distance",

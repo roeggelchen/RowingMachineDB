@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\rowing",
-    "\\RowingMachineDB"
+    "\\RowingMachineDB",
+    "\\rowing\\templates",
+    "\\rowing\\templates\\rowing",
+    "\\templates"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\rowing\\models.py",
   "PreviewInSolutionExplorer": false
 }
