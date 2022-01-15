@@ -18,8 +18,8 @@ from django.contrib import admin
 class RowingSession(models.Model):
     id = models.BigAutoField(primary_key=True)
     com_port = models.CharField(max_length=50)
-    c = models.CharField(max_length=5)
-    t = models.CharField(max_length=5)
+    c = models.IntegerField(default=0)
+    t = models.IntegerField(default=0)
     version = models.CharField(max_length=50)
     max_level = models.IntegerField(default=0)
     h = models.IntegerField(default=0)
