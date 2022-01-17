@@ -17,12 +17,14 @@ class RowingSessionSerializer(serializers.ModelSerializer):
         model = models.RowingSession
         fields = [
             "id",
+            "user",
             "com_port",
             "c",
             "t",
             "version",
             "max_level",
             "h",
+            "distance",
             "start_time",
             "end_time"
         ]

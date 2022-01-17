@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib import admin
+from django.contrib.auth.models import User
 
 # Create your models here.
 #class Question(models.Model):
@@ -17,12 +18,14 @@ from django.contrib import admin
 
 class RowingSession(models.Model):
     id = models.BigAutoField(primary_key=True)
+    user = models.CharField(max_length=50); # User();
     com_port = models.CharField(max_length=50)
     c = models.IntegerField(default=0)
     t = models.IntegerField(default=0)
     version = models.CharField(max_length=50)
     max_level = models.IntegerField(default=0)
     h = models.IntegerField(default=0)
+    distance = models.IntegerField(default=0)
     start_time = models.DateTimeField('start_time')#, auto_now_add=True)
     end_time = models.DateTimeField('end_time')#, auto_now_add=True)
     
@@ -43,7 +46,7 @@ class RowingSession(models.Model):
 
     @admin.display(description='Stroke at Distance')
     def score(self):
-        return (str(self.start_time))
+        return (str(self.user) + " | " + str(self.distance) + "m | " + str(self.start_time))
 
 class RowingStroke(models.Model):
     id = models.BigAutoField(primary_key=True)
