@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+#  db:
+#    image: postgres:14.0
+#    environment:
+#      POSTGRES_PASSWORD: kicker
+#      POSTGRES_DB: kicker
+#    volumes:
+#      - "./db:/var/lib/postgresql/data"
+#    ports:
+#      - "5432:5432"
+  rowingmachine_django:
+ #   image: registry.wmaut.de/kicker/kicker-backend
+    build: .
+    ports:
+      - "80:8000"
+    network_mode: "host"
+    restart: always
+#    depends_on:
+#      - db

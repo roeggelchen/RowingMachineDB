@@ -1,0 +1,49 @@
+version: '3.1'
+
+services:
+#  db:
+#    image: postgres:14.0
+#    environment:
+#      POSTGRES_PASSWORD: kicker
+#      POSTGRES_DB: kicker
+#    volumes:
+#      - "./db:/var/lib/postgresql/data"
+#    ports:
+#      - "5432:5432"
+  rowingmachine_db:
+    image: postgres:14.1
+    container_name: rowingmachinedb
+    environment:
+      - POSTGRES_USER=roeggelchen
+      - POSTGRES_PASSWORD=bluskdjfob
+      - POSTGRES_DB=rowingmachine
+    volumes:
+      - "./postgres/pg_conf:/etc/postgresql"
+      - "./postgres/pg_log:/var/log/postgresql"
+      - "./postgres/pg_data:/var/lib/postgresql/data"
+
+    ports:
+      - "5432:5432"
+    network_mode: "host"
+    restart: always
+  rowingmachine_django:
+ #   image: registry.wmaut.de/kicker/kicker-backend
+    build: .
+    ports:
+      - "80:8000"
+    network_mode: "host"
+    restart: always
+    depends_on:
+      - rowingmachine_db
+
+  rowingmachine_grafana:
+    image: grafana/grafana-enterprise:8.2.0
+    ports:
+      - 3000:3000
+    user: '104'
+    volumes:
+      - "./grafana/root:/etc/grafana"
+      - "./grafana/lib:/var/lib/grafana"
+      - "./grafana/share:/usr/share/grafana"
+    depends_on:
+      - rowingmachine_db
